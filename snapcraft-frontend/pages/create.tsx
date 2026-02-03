@@ -244,7 +244,7 @@ export default function Create() {
       <header className={`shadow-lg py-4 ${theme === "dark" ? "bg-gray-900" : "bg-white/90 backdrop-blur-sm"}`}>
         <div className="container mx-auto px-4 flex flex-wrap justify-between items-center gap-4">
           <h1 className="text-2xl md:text-3xl font-bold text-blue-700 dark:text-blue-400">
-            FlowSnap – Autonomous DeFi Builder
+            SnapCraft – Autonomous DeFi Builder
           </h1>
 
           <div className="flex flex-wrap gap-2 md:gap-3 items-center">

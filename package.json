@@ -1,7 +1,7 @@
 {
   "name": "contracts",
   "version": "1.0.0",
-  "description": "Smart contracts for Infinio DeFi Workflow Automation Platform",
+  "description": "Smart contracts for SnapCraft DeFi Workflow Automation Platform",
   "main": "index.js",
   "scripts": {
     "compile": "hardhat compile",

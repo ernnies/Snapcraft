@@ -1,3 +1,3 @@
-# **FlowSnap – No-Code AI-Powered Private DeFi Automation App on Aleo**
+# **SnapCraft – No-Code AI-Powered DeFi Automation App on Linera**
 
-**FlowSnap** is the no-code, drag-and-drop platform built 100% on Aleo that enables anyone to create, deploy, and monetize AI-augmented private DeFi strategies in minutes.
+**SnapCraft** is the no-code, drag-and-drop platform built 100% on Linera that enables anyone to create, deploy, and monetize AI-augmented DeFi strategies in minutes.
