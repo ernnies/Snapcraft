@@ -4,10 +4,11 @@ import { useState, useRef } from "react";
 interface DragDropBuilderProps {
   workflow: string[];
   setWorkflow: React.Dispatch<React.SetStateAction<string[]>>;
-  marketData: { [key: string]: number };
+   actions: string[];  
+  marketData?: { [key: string]: number };
 }
 
-const DragDropBuilder = ({ workflow, setWorkflow, marketData }: DragDropBuilderProps) => {
+const DragDropBuilder = ({ workflow, setWorkflow, actions, marketData = {}, }: DragDropBuilderProps) => {
   const [selectedAction, setSelectedAction] = useState<string | null>(null);
   const [customValue, setCustomValue] = useState("");
   const [validationMessage, setValidationMessage] = useState<string | null>(null);
@@ -23,7 +24,6 @@ const DragDropBuilder = ({ workflow, setWorkflow, marketData }: DragDropBuilderP
     validateWorkflow(items);
   };
 
-  const actions = ["Buy Token", "Sell Token", "Set Price Trigger", "Stake", "Unstake"];
 
   const handleCustomize = (action: string) => {
     setSelectedAction(action);
