@@ -1,0 +1,15 @@
+[workspace]
+members = [
+    "contracts/dao",
+    "contracts/token",
+    "contracts/rwa",
+    "contracts/optimizer",
+]
+resolver = "2"
+
+[workspace.dependencies]
+linera-sdk = { git = "https://github.com/linera-io/linera-protocol", branch = "main" }
+serde = { version = "1.0", features = ["derive"] }
+thiserror = "1.0"
+serde_json = "1.0"
+anyhow = "1.0"

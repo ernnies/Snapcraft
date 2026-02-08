@@ -1,19 +1,14 @@
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.24;
+[package]
+name = "yield-optimizer"
+version = "0.1.0"
+edition = "2021"
 
-import "@openzeppelin/contracts/access/AccessControl.sol";
+[lib]
+crate-type = ["cdylib"]
 
-contract ProjectAccessControl is AccessControl {
-    bytes32 public constant OPERATOR_ROLE = keccak256("OPERATOR_ROLE");
-
-    constructor() {
-        _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
-        _grantRole(OPERATOR_ROLE, msg.sender);
-    }
-
-    /// @notice Checks if caller has operator role
-    modifier onlyOperator() {
-        require(hasRole(OPERATOR_ROLE, msg.sender), "Caller is not an operator");
-        _;
-    }
-}
+[dependencies]
+linera-sdk.workspace = true
+serde.workspace = true
+thiserror.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true
