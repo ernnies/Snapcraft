@@ -1,17 +1,14 @@
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.24;
+[package]
+name = "c0mrad-token"
+version = "0.1.0"
+edition = "2021"
 
-import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+[lib]
+crate-type = ["cdylib"]
 
-contract MockERC20 is ERC20 {
-    constructor(string memory name, string memory symbol, uint256 initialSupply) ERC20(name, symbol) {
-        _mint(msg.sender, initialSupply);
-    }
-
-    /// @notice Mints additional tokens (for testing)
-    /// @param to Address to receive tokens
-    /// @param amount Amount to mint
-    function mint(address to, uint256 amount) external {
-        _mint(to, amount);
-    }
-}
+[dependencies]
+linera-sdk.workspace = true
+serde.workspace = true
+thiserror.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true

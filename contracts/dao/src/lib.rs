@@ -1,18 +1,17 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.24;
 
-interface IInsurance {
-    /// @notice Emitted when a user adds a contribution
-    event ContributionAdded(address indexed user, uint256 amount);
+pub mod errors;
+pub mod operations;
+pub mod state;
 
-    /// @notice Emitted when a claim is processed
-    event ClaimProcessed(address indexed user, uint256 amount);
+use errors::Error;
+use linera_sdk::{
+    base::{ContractRuntime, ServiceRuntime},
+    contract::{Contract, ContractRuntime as _},
+    service::{Service, ServiceRuntime as _},
+};
+use operations::{Operation, Query};
+use state::{DaoState, Workflow};
 
-    /// @notice Adds a contribution to the insurance pool
-    /// @param amount Amount of tokens to contribute
-    function addContribution(uint256 amount) external;
-
-    /// @notice Processes a claim from the pool
-    /// @param amount Amount to claim
-    function processClaim(uint256 amount) external;
-}
+linera_sdk::contract!(DaoState);
+linera_sdk::service!(DaoState);
